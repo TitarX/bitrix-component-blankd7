@@ -1,0 +1,1 @@
+# bitrix-component-blankd7
