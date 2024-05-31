@@ -8,11 +8,11 @@ use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
 
-$arComponentDescription = array(
+$arComponentDescription = [
     'NAME' => Loc::getMessage('BLANKD7_COMPONENT_NAME'),
     'DESCRIPTION' => Loc::getMessage('BLANKD7_COMPONENT_DESCRIPTION'),
-    'PATH' => array(
+    'PATH' => [
         'ID' => 'custom',
         'NAME' => Loc::getMessage('CUSTOM_PATH_NAME')
-    ),
-);
+    ],
+];

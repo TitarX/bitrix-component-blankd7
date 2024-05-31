@@ -10,12 +10,12 @@ Loc::loadMessages(__FILE__);
 
 class Blankd7Component extends CBitrixComponent
 {
-    public function onPrepareComponentParams($params)
+    public function onPrepareComponentParams($arParams): array
     {
-        return $params;
+        return $arParams;
     }
 
-    public function executeComponent()
+    public function executeComponent(): void
     {
         $this->includeComponentTemplate();
     }

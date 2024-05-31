@@ -9,7 +9,7 @@ Loc::loadMessages(__FILE__);
 
 global $USER;
 
-$answer = array('status' => 'success');
+$answer = ['status' => 'success'];
 
 if ($USER->IsAuthorized()) {
     $answer['status'] = 'failure';
