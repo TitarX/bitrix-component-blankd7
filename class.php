@@ -5,10 +5,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 
 use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\Loader;
 
 Loc::loadMessages(__FILE__);
 
-class Blankd7Component extends CBitrixComponent
+class CBlankd7Component extends CBitrixComponent
 {
     public function onPrepareComponentParams($arParams): array
     {
@@ -17,6 +18,21 @@ class Blankd7Component extends CBitrixComponent
 
     public function executeComponent(): void
     {
-        $this->includeComponentTemplate();
+        if (!Loader::includeModule('iblock')) {
+            ShowError(Loc::getMessage('BLANKD7_COMPONENT_IBLOCK_MODULE_NONE'));
+            return;
+        }
+
+        if (empty($arParams['PRODUCTS_IBLOCK_ID'])
+            || !is_numeric($arParams['PRODUCTS_IBLOCK_ID'])) {
+            ShowError(Loc::getMessage('BLANKD7_COMPONENT_NO_PARAMS'));
+            return;
+        }
+
+        if ($this->startResultCache(false)) {
+            //
+
+            $this->includeComponentTemplate();
+        }
     }
 }
