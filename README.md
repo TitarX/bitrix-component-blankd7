@@ -1,1 +1,1 @@
-# bitrix-component-blankd7
+Folder blankd7
